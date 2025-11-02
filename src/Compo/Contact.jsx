@@ -36,31 +36,29 @@ const Contact = () => {
       return;
     }
 
-    emailjs
-      .send(
-        EMAIL_JS_SERVICE_ID,
-        EMAIL_JS_TEMPLATE_ID,
-        {
-          from_name: username,
-          to_name: "Devraj Singh",
-          reply_to: user_email,
-          to_email: "devrajsinghsisodiya72@gmail.com",
-          message: user_message,
-        },
-        EMAIL_JS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setSuccess(true);
-          setForm({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          setLoading(false);
-          setError("Uh oh! Something went wrong. Please try again later.");
-          console.error(error);
-        }
-      );
+   emailjs
+  .send(
+    EMAIL_JS_SERVICE_ID,
+    EMAIL_JS_TEMPLATE_ID,
+    {
+      from_name: username,
+      reply_to: user_email,
+      message: user_message,
+    },
+    EMAIL_JS_PUBLIC_KEY
+  )
+  .then(
+    () => {
+      setLoading(false);
+      setSuccess(true);
+      setForm({ name: "", email: "", message: "" });
+    },
+    (error) => {
+      setLoading(false);
+      setError("Uh oh! Something went wrong. Please try again later.");
+      console.error("EmailJS Error:", error);
+    }
+  );
   };
 
   return (
