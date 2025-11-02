@@ -8,7 +8,7 @@ const Navbar = () => {
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
-    <nav className="bg-[#fdf6e3] border-b border-gray-300 p-4 text-gray-800 fixed w-full z-50 top-0 shadow-md">
+    <nav className="bg-[#fdf6e3] border-b border-gray-300 p-4 text-gray-800 fixed w-full z-100 top-0 shadow-md">
       <div className="mx-auto flex w-5/6 items-center justify-between">
         {/* Left Menu (Desktop) */}
         <div className="hidden sm:flex space-x-6 text-sm font-medium">
