@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Navbar = () => {
@@ -7,13 +7,8 @@ const Navbar = () => {
   const toggleMobileMenu = () => setMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
-  // Close menu on scroll / route change
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
-    <nav className="bg-[#fdf6e3] border-b border-gray-300 p-4 text-gray-800 fixed w-full z-50 top-0 shadow-md backdrop-blur-md">
+    <nav className="bg-[#fdf6e3] border-b border-gray-300 p-4 text-gray-800 fixed w-full z-[9999] top-0 shadow-md backdrop-blur-md">
       <div className="mx-auto flex w-5/6 items-center justify-between">
         {/* Left Menu (Desktop) */}
         <div className="hidden sm:flex space-x-6 text-sm font-medium">
@@ -27,7 +22,9 @@ const Navbar = () => {
 
         {/* Center Logo */}
         <div className="text-2xl sm:text-2xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">
-          <AnchorLink href="#home">Devraj Singh</AnchorLink>
+          <AnchorLink href="#home" onClick={closeMobileMenu}>
+            Devraj Singh
+          </AnchorLink>
         </div>
 
         {/* Right Menu (Desktop) */}
@@ -56,7 +53,14 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#fdf6e3] flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-gray-800 z-40 transition-all duration-300">
+        <div className="fixed inset-0 bg-[#fdf6e3] flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-gray-800 z-[99999]">
+          <button
+            onClick={closeMobileMenu}
+            className="absolute top-6 right-8 text-3xl text-blue-700 focus:outline-none"
+          >
+            ✖
+          </button>
+
           <AnchorLink href="#home" onClick={closeMobileMenu} className="hover:text-blue-600">
             Home
           </AnchorLink>
