@@ -15,119 +15,42 @@ import PostMan from "../image/postman.jpg";
 const Skills = () => {
   return (
     <div
-      name="skills" id="skill"
-      className="bg-[#1a1a1a]  w-full  max-h-full text-gray-200  pt-14  "
+      name="skills"
+      id="skill"
+      className="bg-[#fdf6e3] w-full max-h-full text-gray-900 pt-14"
     >
-        
-      {/* Container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center h-full w-full">
         <div>
           <p className="text-4xl font-bold inline border-b-4 border-pink-600">
             Skills
           </p>
-         <br></br><br></br>
+          <br />
+          <br />
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full text-center py-8">
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 h-auto pt-4">
-            <img
-              className="mx-auto w-20 contrast-125"
-              src={HTML}
-              alt="Html Icon"
-            />
-            <p className="my-4">HTML</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-125"
-              src={CSS}
-              alt="CSS Icon"
-            />
-            <p className="my-4">CSS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-150"
-              src={JavaScript}
-              alt="JavaScript Icon"
-            />
-            <p className="my-4">JavaScript</p>
-          </div>
-         
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={Tailwind}
-              alt="Tailwind Icon"
-            />
-            <p className="my-4">Tailwind</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={Bootstrap}
-              alt="Bootstrap Icon"
-            />
-            <p className="my-4">Bootstrap</p>
-          </div>
-         
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={ReactImg}
-              alt="ReactImg Icon"
-            />
-            <p className="my-4">React</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={JSX}
-              alt="ReactImg Icon"
-            />
-            <p className="my-4">JSX</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={NodeJS}
-              alt="Nextjs Icon"
-            />
-            <p className="my-4">Node JS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={Express}
-              alt="Nextjs Icon"
-            />
-            <p className="my-4">Express JS</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={MongoDB}
-              alt="Nextjs Icon"
-            />
-            <p className="my-4">MongoDB</p>
-          </div>
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={GitHub}
-              alt="GitHub Icon"
-            />
-            <p className="my-4">GitHub</p>
-          </div>
-          
-          <div className="shadow-md shadow-[#040c14] hover:scale-110 duration-300 pt-4">
-            <img
-              className="mx-auto w-20 contrast-200"
-              src={PostMan}
-              alt="ReactImg Icon"
-            />
-            <p className="my-4">PostMan</p>
-          </div>
+          {[
+            { img: HTML, name: "HTML" },
+            { img: CSS, name: "CSS" },
+            { img: JavaScript, name: "JavaScript" },
+            { img: Tailwind, name: "Tailwind" },
+            { img: Bootstrap, name: "Bootstrap" },
+            { img: ReactImg, name: "React" },
+            { img: JSX, name: "JSX" },
+            { img: NodeJS, name: "Node JS" },
+            { img: Express, name: "Express JS" },
+            { img: MongoDB, name: "MongoDB" },
+            { img: GitHub, name: "GitHub" },
+            { img: PostMan, name: "PostMan" },
+          ].map((skill, i) => (
+            <div
+              key={i}
+              className="shadow-md shadow-gray-400 hover:scale-110 duration-300 bg-white rounded-xl pt-4"
+            >
+              <img className="mx-auto w-20" src={skill.img} alt={skill.name} />
+              <p className="my-4 font-medium">{skill.name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
