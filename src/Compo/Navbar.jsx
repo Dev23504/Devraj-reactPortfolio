@@ -53,7 +53,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-[#fdf6e3] flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-gray-800 z-[99999]">
+        <div className="fixed inset-0 bg-[#fdf6e3] flex flex-col items-center justify-center space-y-8 text-2xl font-semibold text-gray-800 z-[99999] overflow-y-auto py-12">
           <button
             onClick={closeMobileMenu}
             className="absolute top-6 right-8 text-3xl text-blue-700 focus:outline-none"
