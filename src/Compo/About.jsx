@@ -1,5 +1,5 @@
 import React from "react";
-import devimage from "../image/devraj.jpg";
+import devimage from "../image/Devrajs.jpeg";
 import PDF from "../resume/Devraj Singh front-end.pdf";
 
 const About = () => {
